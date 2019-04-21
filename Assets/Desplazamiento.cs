@@ -20,8 +20,11 @@ public class Desplazamiento : MonoBehaviour
     {
         float posX = Input.GetAxis("X");
         Vector2 v2 = new Vector2(posX, 0);
+        //Doy fuerza y velocidad a la pala
         rb2d.AddForce(v2 * velocidad);
         rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0);
+        //Evito que la pala se salga de la pantalla
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -10, 10), transform.position.y);
 
     }
 }

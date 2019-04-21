@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Desplazamiento.cs" />
+    <Compile Include="Assets\Perdido.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/PC/Desktop/Brickmasher/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
