@@ -7,4 +7,5 @@ Proyecto final Desarrollo de Aplicaciones Multiplataforma
 
 22/04/19 Creé la bola y el rebote de la misma al colisionar con la pala o los límites.
 Al caer, por el momento vuelve a aparecer en la posición inicial.
->>>>>>> 2d6a8b927595a243a503be93c95fad68e8f1b84d
+
+30/04/19 Cambios menores. Creada una beta de tirar la bola que falla.
