@@ -7,16 +7,34 @@ public class Desplazamiento : MonoBehaviour
 
     public int velocidad = 12;
     public int velocidad2 = 2000;
-    public Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
+    public float velocidadBola = 10;
+    public Rigidbody rbb;
+    public GameObject bola;
+    private Rigidbody2D rbb2d;
+    public bool bolaParada = true;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        rbb2d= bola.GetComponent<Rigidbody2D>();
+    }
+
     void Update()
+    {
+        if (Input.GetKey(KeyCode.Space)&&bolaParada)
+        {
+            TiraBola();
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         float posX = Input.GetAxis("X");
         Vector2 v2 = new Vector2(posX, 0);
@@ -27,4 +45,11 @@ public class Desplazamiento : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -10, 10), transform.position.y);
 
     }
+
+    void TiraBola() {
+        rbb2d.isKinematic = false;
+        rbb2d.AddForce(new Vector2(0, velocidadBola));
+        bolaParada = false;
+    }
+
 }
