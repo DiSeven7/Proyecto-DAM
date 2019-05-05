@@ -61,8 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bloque.cs" />
     <Compile Include="Assets\Desplazamiento.cs" />
+    <Compile Include="Assets\GeneradorBloques.cs" />
     <Compile Include="Assets\Perdido.cs" />
+    <Compile Include="Assets\PonPuntos.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/PC/Desktop/Brickmasher/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

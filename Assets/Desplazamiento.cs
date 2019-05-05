@@ -7,10 +7,11 @@ public class Desplazamiento : MonoBehaviour
 
     public int velocidad = 12;
     public int velocidad2 = 2000;
-    private Rigidbody2D rb2d;
     public float velocidadBola = 10;
     public Rigidbody rbb;
+    public GameObject desplazamiento;
     public GameObject bola;
+    public static Rigidbody2D rb2d;
     private Rigidbody2D rbb2d;
     public bool bolaParada = true;
 
@@ -43,12 +44,11 @@ public class Desplazamiento : MonoBehaviour
         rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0);
         //Evito que la pala se salga de la pantalla
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -10, 10), transform.position.y);
-
     }
 
     void TiraBola() {
         rbb2d.isKinematic = false;
-        rbb2d.AddForce(new Vector2(0, velocidadBola));
+        rbb2d.AddForce(new Vector2(1, velocidadBola));
         bolaParada = false;
     }
 

@@ -23,7 +23,7 @@ public class Perdido : MonoBehaviour
         if (suelo.tag == "bola")
         {
             //Si la pelota toca el suelo, vuelve a la posición inicial y se para
-            bola.transform.position = new Vector3(desplazamiento.transform.position.x,desplazamiento.transform.position.y+0.6f,desplazamiento.transform.position.z);
+            bola.transform.position = new Vector3(Desplazamiento.rb2d.transform.position.x, Desplazamiento.rb2d.position.y+1f, Desplazamiento.rb2d.transform.position.z);
             bola.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             rbb.isKinematic = true;
             desp.bolaParada = true;
