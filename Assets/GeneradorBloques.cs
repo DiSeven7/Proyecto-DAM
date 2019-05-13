@@ -7,18 +7,20 @@ public class GeneradorBloques : MonoBehaviour
 
     public GameObject Bloque;
     public Material[] Colores;
+    public static int totalfilas = 7;
+    public static int totalBloquesPorFila = 11;
 
     // Start is called before the first frame update
     void Start()
     {
-        GeneraTotalFilas(8);
+        GeneraTotalFilas(totalfilas);
     }
 
     void GeneraFila(float altura)
     {
-        for(int i = 0; i < 11; i++)
+        for(int i = 0; i < totalBloquesPorFila; i++)
         {
-            GameObject bloque = Instantiate(Bloque, new Vector2(i-(11-i), altura), Quaternion.identity);
+            GameObject bloque = Instantiate(Bloque, new Vector2(i - (totalBloquesPorFila - i), altura), Quaternion.identity);
             bloque.GetComponent<Bloque>().AsignaColor(Colores[Random.Range(0, Colores.Length)],Colores);
         }
     }

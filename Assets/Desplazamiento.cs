@@ -12,7 +12,7 @@ public class Desplazamiento : MonoBehaviour
     public GameObject desplazamiento;
     public GameObject bola;
     public static Rigidbody2D rb2d;
-    private Rigidbody2D rbb2d;
+    public static Rigidbody2D rbb2d;
     public bool bolaParada = true;
 
     // Start is called before the first frame update
@@ -23,12 +23,12 @@ public class Desplazamiento : MonoBehaviour
 
     private void Start()
     {
-        rbb2d= bola.GetComponent<Rigidbody2D>();
+        rbb2d = bola.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space)&&bolaParada)
+        if (Input.GetKey(KeyCode.Space) && bolaParada)
         {
             TiraBola();
         }
@@ -41,15 +41,20 @@ public class Desplazamiento : MonoBehaviour
         Vector2 v2 = new Vector2(posX, 0);
         //Doy fuerza y velocidad a la pala
         rb2d.AddForce(v2 * velocidad);
-        rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0);
+        rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0); 
         //Evito que la pala se salga de la pantalla
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -10, 10), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -20, 20), transform.position.y);
     }
 
-    void TiraBola() {
-        rbb2d.isKinematic = false;
-        rbb2d.AddForce(new Vector2(1, velocidadBola));
-        bolaParada = false;
+    void TiraBola()
+    {
+        if (Perdido.cuentamuertes != 4)
+        {
+            rbb2d.isKinematic = false;
+            rb2d.isKinematic = false;
+            rbb2d.AddForce(new Vector2(1, velocidadBola));
+            bolaParada = false;
+        }
     }
 
 }

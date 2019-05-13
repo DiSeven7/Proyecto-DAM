@@ -64,6 +64,7 @@
     <Compile Include="Assets\Bloque.cs" />
     <Compile Include="Assets\Desplazamiento.cs" />
     <Compile Include="Assets\GeneradorBloques.cs" />
+    <Compile Include="Assets\GestorEscenas.cs" />
     <Compile Include="Assets\Perdido.cs" />
     <Compile Include="Assets\PonPuntos.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

@@ -10,6 +10,7 @@ public class Bloque : MonoBehaviour
     public int golpesAguante = 1;
     public int golpesSufridos = 0;
     public static int contadorPuntos = 0;
+    public static int totalBloques = GeneradorBloques.totalfilas * GeneradorBloques.totalBloquesPorFila;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,6 +25,7 @@ public class Bloque : MonoBehaviour
         golpesSufridos += 1;
         if (golpesSufridos == golpesAguante)
         {
+            totalBloques--;
             contadorPuntos += puntos;
             EliminarBloque();
         }

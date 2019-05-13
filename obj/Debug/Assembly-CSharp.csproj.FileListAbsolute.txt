@@ -168,7 +168,6 @@ C:\Users\PC\Desktop\Brickmasher\Temp\bin\Debug\UnityEngine.Timeline.xml
 C:\Users\PC\Desktop\Brickmasher\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\PC\Desktop\Brickmasher\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
 C:\Users\PC\Desktop\Brickmasher\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
-C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.dll

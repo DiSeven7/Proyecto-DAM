@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PonPuntos : MonoBehaviour
 {
-
     public TextMesh texto;
 
     void Start()
@@ -15,6 +14,17 @@ public class PonPuntos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        texto.text = Bloque.contadorPuntos.ToString();
+        if (Perdido.cuentamuertes == 4)
+        {
+            texto.text = "Has perdido :(";
+        }
+        else if (Bloque.totalBloques==0)
+        {
+            texto.text = "¡Has ganado!";
+        }
+        else
+        {
+            texto.text = Bloque.contadorPuntos.ToString();
+        }
     }
 }

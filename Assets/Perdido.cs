@@ -10,6 +10,7 @@ public class Perdido : MonoBehaviour
     public GameObject desplazamiento;
     private Rigidbody2D rbb;
     public Desplazamiento desp;
+    public static int cuentamuertes = 0;
 
     void Start()
     {
@@ -22,11 +23,14 @@ public class Perdido : MonoBehaviour
     {
         if (suelo.tag == "bola")
         {
+            cuentamuertes++;
             //Si la pelota toca el suelo, vuelve a la posición inicial y se para
             bola.transform.position = new Vector3(Desplazamiento.rb2d.transform.position.x, Desplazamiento.rb2d.position.y+1f, Desplazamiento.rb2d.transform.position.z);
             bola.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             rbb.isKinematic = true;
             desp.bolaParada = true;
+            Desplazamiento.rb2d.isKinematic = true;
+            Desplazamiento.rb2d.velocity = Vector2.zero;
         }
     }
 
