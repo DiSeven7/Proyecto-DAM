@@ -12,3 +12,4 @@ Al caer, por el momento vuelve a aparecer en la posición inicial.
 
 14/05/19 Arreglo del bug de que la pala se moviera tras perder una vida. Arreglo del incremento de la velocidad de la bola al colisionar con la pala o un bloque. Arreglo del movimiento de la pala (al llegar al extremo izquierdo se ralentizaba). Añadidas vidas. Añadida victoria al eliminar todos los bloques. Creado, pero no implementado un menú. Creados, pero no implementados, los créditos.
 
+21/05/19 Supresión de todas las escenas, excepto la del juego en sí, por problemas con elementos UI al realizar el build. Persistencia y actualización de los récords. Arreglos menores.
