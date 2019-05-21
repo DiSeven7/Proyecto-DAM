@@ -5,32 +5,31 @@ using UnityEngine;
 public class Desplazamiento : MonoBehaviour
 {
 
-    public int velocidad = 12;
-    public int velocidad2 = 2000;
-    public float velocidadBola = 10;
+    public int velocidad;
+    public int velocidad2;
+    public float velocidadBola;
     public Rigidbody rbb;
     public GameObject desplazamiento;
     public GameObject bola;
     public static Rigidbody2D rb2d;
     public static Rigidbody2D rbb2d;
     public bool bolaParada = true;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
-
+ 
     private void Start()
     {
+        rb2d = GetComponent<Rigidbody2D>();
         rbb2d = bola.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && bolaParada)
+        if ((Input.GetKey(KeyCode.Space)||Input.touchCount==1)&& bolaParada)
         {
             TiraBola();
+        }
+        else if ((Input.GetKey(KeyCode.Escape)))
+        {
+            Application.Quit();
         }
     }
 
@@ -40,10 +39,11 @@ public class Desplazamiento : MonoBehaviour
         float posX = Input.GetAxis("X");
         Vector2 v2 = new Vector2(posX, 0);
         //Doy fuerza y velocidad a la pala
-        rb2d.AddForce(v2 * velocidad);
-        rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0); 
+        rb2d.AddForce(v2 * velocidad2);
+        rb2d.velocity = new Vector2(Mathf.Clamp(rb2d.velocity.x, -velocidad, velocidad), 0);
+        rb2d.inertia = 0;
         //Evito que la pala se salga de la pantalla
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -20, 20), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -15,15), transform.position.y);
     }
 
     void TiraBola()
@@ -52,7 +52,7 @@ public class Desplazamiento : MonoBehaviour
         {
             rbb2d.isKinematic = false;
             rb2d.isKinematic = false;
-            rbb2d.AddForce(new Vector2(1, velocidadBola));
+            rbb2d.AddForce(new Vector2(1, velocidadBola+velocidadBola/4));
             bolaParada = false;
         }
     }

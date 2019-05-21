@@ -12,6 +12,15 @@ public class Bloque : MonoBehaviour
     public static int contadorPuntos = 0;
     public static int totalBloques = GeneradorBloques.totalfilas * GeneradorBloques.totalBloquesPorFila;
 
+    private void Update()
+    {
+        if (PonPuntos.restablece)
+        {
+            Destroy(gameObject);
+            PonPuntos.restablece = false;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "bola")

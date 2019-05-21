@@ -172,3 +172,4 @@ C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csproj.CoreCompileInpu
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.dll
 C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.pdb
+C:\Users\PC\Desktop\Brickmasher\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache

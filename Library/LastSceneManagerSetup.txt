@@ -1,10 +1,4 @@
 sceneSetups:
-- path: Assets/Menu.unity
-  isLoaded: 0
-  isActive: 0
 - path: Assets/EscenaPrincipal.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Creditos.unity
-  isLoaded: 0
-  isActive: 0
